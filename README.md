@@ -1,102 +1,96 @@
 # AuthApp
 
-React Native authentication UI with Sign Up and Login screens, compatible with **Android** and **iOS**.
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+
+Interface de autenticação em React Native com telas de Cadastro e Login, compatível com **Android** e **iOS**.
 
 ---
 
-## Screenshots
+## Tecnologias
 
-| Sign Up | Login |
-|---------|-------|
-| ![Sign Up](docs/signup.png) | ![Login](docs/login.png) |
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
+| Camada | Tecnologia |
+|--------|-----------|
 | Framework | React Native 0.76 |
-| Language | TypeScript |
-| Navigation | React Navigation 6 |
+| Linguagem | TypeScript |
+| Navegação | React Navigation 6 |
 | Safe Area | react-native-safe-area-context |
 
 ---
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 AuthApp/
-├── App.tsx                         # Root component
+├── App.tsx                         # Componente raiz
 ├── src/
 │   ├── components/
-│   │   ├── InputField.tsx          # Reusable text input with label + password toggle
-│   │   └── SocialButton.tsx        # Social login button (Facebook, Google, Apple)
+│   │   ├── InputField.tsx          # Input reutilizável com label + toggle de senha
+│   │   └── SocialButton.tsx        # Botão de login social (Facebook, Google, Apple)
 │   ├── navigation/
-│   │   └── AppNavigator.tsx        # Stack navigator (SignUp → Login)
+│   │   └── AppNavigator.tsx        # Stack navigator (Cadastro → Login)
 │   ├── screens/
-│   │   ├── SignUpScreen.tsx         # Registration screen
-│   │   └── LoginScreen.tsx         # Login screen
+│   │   ├── SignUpScreen.tsx         # Tela de cadastro
+│   │   └── LoginScreen.tsx         # Tela de login
 │   └── theme/
-│       ├── colors.ts               # Color palette
-│       └── typography.ts           # Font sizes and families
+│       ├── colors.ts               # Paleta de cores
+│       └── typography.ts           # Tamanhos e famílias de fonte
 ├── package.json
 └── tsconfig.json
 ```
 
 ---
 
-## Features
+## Funcionalidades
 
-- **Sign Up screen**
-  - Email and password fields with inline validation
-  - Password visibility toggle
-  - Terms & privacy policy checkbox
-  - Social registration (Facebook, Google, Apple)
-  - Navigation to Login
+- **Tela de Cadastro**
+  - Campos de e-mail e senha com validação inline
+  - Toggle de visibilidade da senha
+  - Checkbox de termos e política de privacidade
+  - Cadastro social (Facebook, Google, Apple)
+  - Navegação para o Login
 
-- **Login screen**
-  - Email and password fields with inline validation
-  - Password visibility toggle
-  - Forgot password action
-  - Social login (Facebook, Google, Apple)
-  - Navigation to Sign Up
+- **Tela de Login**
+  - Campos de e-mail e senha com validação inline
+  - Toggle de visibilidade da senha
+  - Ação de esqueci minha senha
+  - Login social (Facebook, Google, Apple)
+  - Navegação para o Cadastro
 
 - **Cross-platform**
-  - `KeyboardAvoidingView` with platform-specific behavior
-  - `SafeAreaView` for notch/dynamic island support
-  - Platform-specific shadows (iOS) and elevation (Android)
-  - Platform-specific font families
+  - `KeyboardAvoidingView` com comportamento específico por plataforma
+  - `SafeAreaView` com suporte a notch e Dynamic Island
+  - Sombras nativas no iOS e `elevation` no Android
+  - Famílias de fonte específicas por plataforma
 
 ---
 
-## Getting Started
+## Como Rodar
 
-### Prerequisites
+### Pré-requisitos
 
 - Node.js >= 18
 - React Native CLI
 - **iOS:** Xcode + CocoaPods
 - **Android:** Android Studio + JDK 17
 
-### Install
+### Instalação
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-username/AuthApp.git
+# Clonar o repositório
+git clone https://github.com/seu-usuario/AuthApp.git
 cd AuthApp
 
-# Install dependencies
+# Instalar dependências
 npm install
 
-# iOS only — install pods
+# Somente iOS — instalar pods
 cd ios && pod install && cd ..
 ```
 
-### Run
+### Execução
 
 ```bash
-# Start Metro bundler
+# Iniciar o Metro bundler
 npm start
 
 # Android
@@ -108,14 +102,14 @@ npm run ios
 
 ---
 
-## Theme Customization
+## Personalização de Tema
 
-All colors are centralized in [src/theme/colors.ts](src/theme/colors.ts):
+Todas as cores estão centralizadas em [src/theme/colors.ts](src/theme/colors.ts):
 
 ```ts
 export const Colors = {
-  primary: '#1E1E1E',      // Button + checkbox background
-  background: '#FFFFFF',   // Screen background
+  primary: '#1E1E1E',      // Fundo do botão e checkbox
+  background: '#FFFFFF',   // Fundo das telas
   inputBackground: '#F7F7F7',
   facebook: '#1877F2',
   google: '#EA4335',
@@ -124,31 +118,31 @@ export const Colors = {
 };
 ```
 
-Font sizes and families are in [src/theme/typography.ts](src/theme/typography.ts).
+Tamanhos e famílias de fonte estão em [src/theme/typography.ts](src/theme/typography.ts).
 
 ---
 
-## Validation Rules
+## Regras de Validação
 
-| Field | Rule |
-|-------|------|
-| Email | Required, valid format (`user@domain.com`) |
-| Password | Required, minimum 6 characters |
-| Terms checkbox | Must be accepted on Sign Up |
+| Campo | Regra |
+|-------|-------|
+| E-mail | Obrigatório, formato válido (`usuario@dominio.com`) |
+| Senha | Obrigatório, mínimo 6 caracteres |
+| Checkbox de termos | Deve ser aceito no Cadastro |
 
 ---
 
 ## Roadmap
 
-- [ ] Integrate real authentication API (JWT)
-- [ ] Add AsyncStorage / SecureStore for token persistence
-- [ ] Replace emoji icons with `react-native-vector-icons`
-- [ ] Add loading states and error feedback from API
-- [ ] Dark mode support
-- [ ] Biometric login (Face ID / Fingerprint)
+- [ ] Integrar API real de autenticação (JWT)
+- [ ] Adicionar persistência de token com AsyncStorage / SecureStore
+- [ ] Substituir ícones emoji por `react-native-vector-icons`
+- [ ] Adicionar estados de carregamento e feedback de erros da API
+- [ ] Suporte a modo escuro
+- [ ] Login biométrico (Face ID / Impressão digital)
 
 ---
 
-## License
+## Licença
 
 MIT
