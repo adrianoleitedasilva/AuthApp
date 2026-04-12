@@ -1,0 +1,18 @@
+export const Colors = {
+  primary: '#1E1E1E',
+  background: '#FFFFFF',
+  inputBackground: '#F7F7F7',
+  inputBorder: '#E8E8E8',
+  placeholder: '#AAAAAA',
+  text: '#1E1E1E',
+  textSecondary: '#888888',
+  checkboxActive: '#1E1E1E',
+  socialBorder: '#E8E8E8',
+  divider: '#E8E8E8',
+  link: '#1E1E1E',
+  white: '#FFFFFF',
+  facebook: '#1877F2',
+  google: '#EA4335',
+  apple: '#000000',
+  error: '#FF3B30',
+};
